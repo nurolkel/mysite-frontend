@@ -9,13 +9,15 @@ import { BgImage } from 'gbimage-bridge'
 const MainSection = styled.main`
     height: 500px;
     position: relative;
+    box-sizing: border-box;
 
-
-    .masthead {
-        height: 400px;
-        width: 100%;
-        background-blend-mode: darken;
+    div {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%,-50%);
     }
+  
 
 `;
 
@@ -65,11 +67,14 @@ const HeroSection = () => {
     return (
         <MainSection>
             {mobile && 
-                <BgImage image={image} className="masthead">
-                    <h1>Fast and Powerful Websites</h1>
-                    <p>Optimize your Webpage with New Technology</p>
+                <>
+                <GatsbyImage image={image} alt="Slicks Slices" />
+                <div>
+                    <h2>Fast and Powerful Websites</h2>
+                    <p>Optimize your Website with new technology</p>
                     <button>Contact Us</button>
-                </BgImage>
+                </div>
+               </>
             }
         </MainSection>
     )
