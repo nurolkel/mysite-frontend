@@ -11,11 +11,12 @@ const MainSection = styled.main`
     position: relative;
     box-sizing: border-box;
 
-    div {
+    .absolute {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translateX(-50%,-50%);
+        background-color: var(--light-grey);
     }
   
 
@@ -69,7 +70,7 @@ const HeroSection = () => {
             {mobile && 
                 <>
                 <GatsbyImage image={image} alt="Slicks Slices" />
-                <div>
+                <div className="absolute">
                     <h2>Fast and Powerful Websites</h2>
                     <p>Optimize your Website with new technology</p>
                     <button>Contact Us</button>
