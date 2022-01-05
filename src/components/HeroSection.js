@@ -16,9 +16,9 @@ const MainSection = styled.main`
     align-items: center;
     
     div {
-        height: 200px;
+        height: 150px;
         width: 100%;
-        
+        padding: 5px;
     }
   
 
