@@ -157,7 +157,7 @@ const NavBar = () => {
         return () => {
             window.removeEventListener('scroll', changeBackground)
         }
-    },[window, background])
+    },[background])
 
     useEffect(() => {
         if (window.innerWidth > 1024) {
