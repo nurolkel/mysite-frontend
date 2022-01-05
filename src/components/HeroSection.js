@@ -15,7 +15,7 @@ const MainSection = styled.main`
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translateX(-50%,-50%);
+        transform: translate(-50%,-50%);
         background-color: var(--light-grey);
     }
   
