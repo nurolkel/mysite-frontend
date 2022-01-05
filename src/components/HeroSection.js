@@ -14,6 +14,7 @@ const MainSection = styled.main`
     .masthead {
         height: 400px;
         width: 100%;
+        background-blend-mode: darken;
     }
 
 `;
