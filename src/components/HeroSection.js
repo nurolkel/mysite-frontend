@@ -10,13 +10,15 @@ const MainSection = styled.main`
     height: 500px;
     position: relative;
     box-sizing: border-box;
-
-    .absolute {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        background-color: var(--light-grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    div {
+        height: 200px;
+        width: 100%;
+        
     }
   
 
@@ -54,6 +56,7 @@ const HeroSection = () => {
                         pngOptions: {quality: 50}
                         placeholder: TRACED_SVG
                         width: 1000
+                        height: 800
                         layout: CONSTRAINED
                     )
                 }
@@ -67,17 +70,12 @@ const HeroSection = () => {
 
     return (
         <MainSection>
-            {mobile && 
-                <>
-                <BgImage image={image}>
-                <div className="absolute">
-                    <h2>Fast and Powerful Websites</h2>
-                    <p>Optimize your Website with new technology</p>
-                    <button>Contact Us</button>
-                </div>
-                </BgImage>
-               </>
-            }
+          <div>
+              <h1>Fast and Powerful Websites</h1>
+              <p>Optimize Your Wesbite and Search Results</p>
+              <button>Find Out How</button>
+          </div>
+          <GatsbyImage image={image} alt="Slick's Slices Website Example" />
         </MainSection>
     )
 }
