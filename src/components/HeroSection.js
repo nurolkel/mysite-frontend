@@ -69,12 +69,13 @@ const HeroSection = () => {
         <MainSection>
             {mobile && 
                 <>
-                <GatsbyImage image={image} alt="Slicks Slices" />
+                <BgImage image={image}>
                 <div className="absolute">
                     <h2>Fast and Powerful Websites</h2>
                     <p>Optimize your Website with new technology</p>
                     <button>Contact Us</button>
                 </div>
+                </BgImage>
                </>
             }
         </MainSection>
