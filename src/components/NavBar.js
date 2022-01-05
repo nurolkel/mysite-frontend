@@ -163,7 +163,7 @@ const NavBar = () => {
         if (window.innerWidth > 1024) {
             setNavBarOpen(false);
         }
-    },[window,navBarOpen])
+    },[navBarOpen])
 
     return (
         <Navigation background={background}>
