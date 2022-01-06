@@ -5,15 +5,13 @@ import Footer from "./Footer";
 
 
 
-const Layout = ({ children }) => {
-    return (
+const Layout = ({ children }) => (
         <>
-            <GlobalStyles />
             <NavBar />
             {children}
             <Footer />
         </>
     )
-}
+
 
 export default Layout;

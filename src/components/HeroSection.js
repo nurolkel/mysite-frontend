@@ -21,10 +21,23 @@ const MainSection = styled.main`
         width: 100%;
         padding: 10px;
     }
+
+    .hero-img {
+        height: 100%;
+        width: 300px;
+    }
+
+
   
     @media ${breakpoints.lg} {
         flex-direction: row;
         flex: 1;
+        height: 800px;
+        justify-content: space-between;
+
+        .hero-img {
+            height: 100%;
+        }
     }
 
 `;
