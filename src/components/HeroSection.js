@@ -8,6 +8,7 @@ import { BgImage } from 'gbimage-bridge'
 
 const MainSection = styled.main`
     height: 500px;
+    width: 100%;
     position: relative;
     box-sizing: border-box;
     display: flex;
@@ -18,9 +19,13 @@ const MainSection = styled.main`
     div {
         height: 150px;
         width: 100%;
-        padding: 5px;
+        padding: 10px;
     }
   
+    @media ${breakpoints.lg} {
+        flex-direction: row;
+        flex: 1;
+    }
 
 `;
 
