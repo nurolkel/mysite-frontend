@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from "@emotion/styled"
 import  { breakpoints }  from '../utils/breakpoints';
 import { Link } from 'gatsby';
 import IconComponent from './IconComponent.js';
@@ -22,20 +22,23 @@ const EmailIcon = styled(MdOutlineEmail)`
 `;
 
 
-const FooterContainer = styled.footer`
+const FooterContainer = styled("footer")`
     box-sizing: border-box;
     width: 100%;
-    border-top: 1px solid var(--dark-grey);
+    background-color: var(--dark-green);
+    padding-top: 10px;
 `;
 
-const FollowUs = styled.h2`
+const FollowUs = styled("h2")`
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 2rem;
+    color: var(--white);
+    font-size: 2.3rem;
 `;
 
 
-const FooterBox = styled.div`
+const FooterBox = styled("div")`
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -47,7 +50,7 @@ const FooterBox = styled.div`
     }
 `;
 
-const FooterInfoItems = styled.div`
+const FooterInfoItems = styled("div")`
     justify-self: center;
     align-self: center;
     margin: 1rem 0.5rem;
@@ -61,17 +64,18 @@ const FooterInfoItems = styled.div`
         text-align: center;
         font-size: 1.5rem;
         text-transform: capitalize;
+        color: var(--light-grey);
     }
-   h2, h3 {
+    h3 {
        text-align: center;
        text-transform: capitalize;
-       color: var(--dark-green);
+       color: var(--white);
        font-size: 2.5rem;
        font-weight: bold;
    }
 `;
 
-const FooterLinks = styled.ul`
+const FooterLinks = styled("ul")`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -85,7 +89,7 @@ const FooterLinks = styled.ul`
         a {
             font-size: 1.2rem;
             text-decoration: underline;
-            color: var(--dark-grey);
+            color: var(--light-grey);
         }
         &:nth-child(1) {
             grid-row-start: 1;
@@ -112,7 +116,7 @@ const FooterLinks = styled.ul`
         flex-direction: row;
     }
 `;
-const FooterLinksContact = styled.ul`
+const FooterLinksContact = styled("ul")`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
@@ -129,7 +133,9 @@ const FooterLinksContact = styled.ul`
         a {
             font-size: 1.2rem;
             text-decoration: underline;
-            color: var(--dark-grey);
+            color: var(--light-grey);
+            display: flex;
+            align-items: center;
         }
         &:nth-child(1) {
             grid-row-start: 1;
@@ -150,7 +156,7 @@ const FooterLinksContact = styled.ul`
     }
 `;
 
-const CopyFooter = styled.div`
+const CopyFooter = styled("div")`
     background: var(--light-green);
     text-align: center;
     margin: 0;
@@ -163,9 +169,10 @@ const CopyFooter = styled.div`
         cursor: pointer;
         color: var(--white);
     }
-    a, p {
+     p {
         font-size: 1.5rem;
         margin: 0;
+        color: var(--light-grey);
     }
 `;
 

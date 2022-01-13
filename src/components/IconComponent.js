@@ -1,10 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled"
 import { breakpoints } from "../utils/breakpoints";
 import { BsFacebook, BsGoogle, BsLinkedin, BsInstagram } from "react-icons/bs";
 import { FaYelp } from "react-icons/fa";
 
-const IconContainer = styled.div`
+const IconContainer = styled("div")`
     display: flex;
     flex-direction: row;
     gap: 3rem;
@@ -13,7 +13,7 @@ const IconContainer = styled.div`
     justify-content: center;
     padding: 1rem 0;
     a {
-        color: var(--light-green);
+        color: var(--white);
         transition: color 300ms, margin 300ms, transform 300ms;
         :hover {
             color: var(--light-green-shadow);
@@ -30,23 +30,23 @@ const IconContainer = styled.div`
 
 const FaceBookIcon = styled(BsFacebook)`
     font-size: 2.5rem;
-    color: var(--light-green);
+    color: var(--white);
 `;
 const GoogleIcon = styled(BsGoogle)`
     font-size: 2.5rem;
-    color: var(--light-green);
+    color: var(--white);
 `;
 const InstagramIcon = styled(BsInstagram)`
     font-size: 2.5rem;
-    color: var(--light-green);
+    color: var(--white);
 `;
 const LinkedinIcon = styled(BsLinkedin)`
     font-size: 2.5rem;
-    color: var(--light-green);
+    color: var(--white);
 `;
 const YelpIcon = styled(FaYelp)`
     font-size: 2.5rem;
-    color: var(--light-green);
+    color: var(--white);
 `;
 
 export default function IconComponent() {

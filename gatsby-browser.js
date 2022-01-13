@@ -1,11 +1,11 @@
 import React from "react"
 import Layout from "./src/components/Layout"
-import GlobalStyles from "./src/styles/GlobalStyles"
+import { GlobalEmtionsStyle } from "./src/styles/GlobalEmotion"
 
 
 export const wrapRootElement = ({ element}) => (
     <>
-        <GlobalStyles />
+        <GlobalEmtionsStyle/>
             {element}
     </>
 

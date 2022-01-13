@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled"
 import { useStaticQuery, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { breakpoints } from "../utils/breakpoints";
-import { BgImage } from 'gbimage-bridge'
 
 
-const MainSection = styled.main`
-    height: 500px;
+
+const MainSection = styled("main")`
+    height: 650px;
     width: 100%;
     position: relative;
     box-sizing: border-box;
@@ -15,28 +15,88 @@ const MainSection = styled.main`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 30px;
     
-    div {
-        height: 150px;
-        width: 100%;
-        padding: 10px;
+    .hero-text {
+        height: 250px;
+        width: 300px;
+        text-align: center;
+        h1 {
+            font-size: 3rem;
+            color: var(--light-green)
+        }
+        p {
+            font-size: 1.7rem;
+            color: var(--dark-grey)
+        }
+        button {
+            font-size: 1.7rem;
+            padding: 1rem 2rem;
+            min-height: 48px;
+            min-width: 48px;
+        }
     }
 
     .hero-img {
-        height: 100%;
-        width: 300px;
+        height: 300px;
+        width: 350px;
     }
 
 
   
-    @media ${breakpoints.lg} {
+    @media ${breakpoints.md} {
         flex-direction: row;
         flex: 1;
-        height: 800px;
+        height: 550px;
         justify-content: space-between;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+        .hero-img {
+            height: 400px;
+            width: 500px;
+        }
+        .hero-text {
+            width: 350px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                font-size: 3rem;
+            }
+            p, button {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    @media ${breakpoints.lg} {
+        height: 800px;
 
         .hero-img {
-            height: 100%;
+            height: auto;
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            width: 500px;
+            height: 400px;
+            background-color:  var(--light-green);
+            border-radius: 15px;
+            margin: 0 auto;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+            h1 {
+                font-size: 3.5rem;
+                font-weight: bold;
+                color: var(--white);
+            }
+            p {
+                color: var(--white);
+            }
         }
     }
 
@@ -73,8 +133,8 @@ const HeroSection = () => {
                         webpOptions: {quality: 75}
                         pngOptions: {quality: 50}
                         placeholder: TRACED_SVG
-                        width: 1000
-                        height: 800
+                        width: 1400
+                        height: 1000
                         layout: CONSTRAINED
                     )
                 }
@@ -88,12 +148,12 @@ const HeroSection = () => {
 
     return (
         <MainSection>
-          <div>
-              <h1>Fast and Powerful Websites</h1>
-              <p>Optimize Your Wesbite and Search Results</p>
-              <button>Find Out How</button>
+          <div className="hero-text">
+              <h1>We Build Fast And <br /> Powerful Websites</h1>
+              <p>Does Your Business Need a New Website?</p>
+              <button>Start Here</button>
           </div>
-          <GatsbyImage image={image} alt="Slick's Slices Website Example" />
+            <GatsbyImage image={image} className="hero-img" alt="Slick's Slices Website Example" />
         </MainSection>
     )
 }

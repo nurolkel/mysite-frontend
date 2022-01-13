@@ -1,34 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
-import styled from "styled-components";
+import styled from "@emotion/styled"
 import { breakpoints } from "../utils/breakpoints";
 
-const Navigation = styled.nav`
+const Navigation = styled("nav")`
     box-sizing: border-box;
     display: flex;
     position: sticky;
     background-color: ${({ background }) => background ? `var(--light-green-tint)` : `var(--white)`};
     justify-content: space-around;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
     top: 0;
     transition: background-color ease-out 300ms;
-    height: 75px;
+    height: 50px;
+    width: 100%;
+
 `
 
-const LogoStyle = styled.div`
+const LogoStyle = styled("div")`
     display: flex;
     justify-content: center;
     align-items: center;
     a {
         text-decoration: none;
-        color: var(--light-green);
+        color: ${({ background }) => background ? `var(--white)` : `var(--light-green)`};
         font-size: 2rem;
         margin: 0 auto;
     }
 `;
 
-const Toggle = styled.div`
+const Toggle = styled("div")`
     display: flex;
     height: 100%;
     cursor: pointer;
@@ -39,11 +41,11 @@ const Toggle = styled.div`
     }
 `;
 
-const NavItems = styled.div`
+const NavItems = styled("div")`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: ${({ open }) => open ? `var(--light-green-tint)` : `var(--white)`};
+    background-color: ${({ open }) => open ? `var(--light-green-tint)` : `none`};
     backdrop-filter: ${({ open}) => open ? `blur(5px)` : `none`};
     border: 1px solid var(--light-green-shadow);
     border-radius: 5px;
@@ -90,16 +92,23 @@ const NavItems = styled.div`
             flex-direction: row;
             justify-content: space-around;
             position: static;
+    
             height: auto;
             width: 300px;
             border: none;
             ul {
                 flex-direction: row;
+
+                li {
+                    a {
+                        color: ${({ background}) => background ? `var(--white)` : `var(--light-green)`};
+                    }
+                }
             }
         }
 `;
 
-const Hamburger = styled.div`
+const Hamburger = styled("div")`
   background-color: var(--dark-green);
   width: 30px;
   height: 3px;
@@ -167,19 +176,22 @@ const NavBar = () => {
 
     return (
         <Navigation background={background}>
-            <LogoStyle>
+            <LogoStyle background={background}>
                 <Link to="/">Performant Web</Link>
             </LogoStyle>
             <Toggle onClick={toggleNavBar}>
                 <Hamburger open={navBarOpen} />
             </Toggle>
-            <NavItems open={navBarOpen}>
+            <NavItems open={navBarOpen} background={background}>
                 <ul>
                     <li>
                         <Link to="/" onClick={toggleNavBar}>Home</Link>
                     </li>
                     <li>
                         <Link to="/about" onClick={toggleNavBar}>About</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact" onClick={toggleNavBar}>Contact Us</Link>
                     </li>
                 </ul>
             </NavItems>
