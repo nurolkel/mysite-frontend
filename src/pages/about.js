@@ -124,7 +124,7 @@ const AboutPage = () => {
 
     const data = useStaticQuery(graphql`
         query headshot {
-            file(name: {eq: "kelvinheadshotl"}) {
+            file(name: {eq: "kelvinHeadShot"}) {
                 childImageSharp {
                     gatsbyImageData(
                         webpOptions: {quality: 75}
